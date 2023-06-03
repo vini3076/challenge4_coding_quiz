@@ -7,7 +7,7 @@
 }
 
 #start-section button {
-    background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,96,33,0.9542191876750701) 100%);
+    background: #54a3f7;
     border-radius: 8px;
     color: #13293d;
     cursor: pointer;
@@ -22,7 +22,17 @@
     transition-timing-function: linear;
     margin-top: 0.6em;
   }
-  
+ #question-section {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ }
+
+ #question-section h1 {
+    text-align: center;
+ }
   .visibile{
     display: block;
     visibility: visible;
@@ -35,6 +45,7 @@
 
   .ansButton {
 	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+    margin: 5px;
 	background-color:#007dc1;
 	border-radius:3px;
 	border:1px solid #124d77;
@@ -42,8 +53,8 @@
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:13px;
-	padding:6px 24px;
+	font-size:20px;
+	padding:10px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #154682;
 }
@@ -57,4 +68,19 @@
 
 ul{
     list-style-type: none;
+}
+
+.card {
+    background: turquoise;
+    border: 1px solid #eceff1;
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
+      rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
+    margin: 40px;
+    padding: 20px;
+  }
+
+  .float-right {
+    float: right;
+    margin-left: 25px;
 }

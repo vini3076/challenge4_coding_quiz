@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Javascript Coding quiz</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-<a href="./highscores.html">View High Scores</a>
-   
-</header>
-<main>
-    <div id="start-section">
-        <h1> Javascript Coding Quiz</h1>
-        <p1> Try you luck on this Javascript Coding quiz. You have 1 minute to answer 5 questions. For each question you get wrong 10 secs will be removed from your timer. Good Luck!</p1>
-        <br>
+      <a href="./highscores.html">View High Scores</a>
+      <h3 class="timer float-right">Time: <span class="timer-count"></span></h3>
+    </header>
+    <main>
+      <div id="start-section">
+        <h1>Javascript Coding Quiz</h1>
+        <p1>
+          Try you luck on this Javascript Coding quiz. You have 1 minute to
+          answer 5 questions. For each question you get wrong 10 secs will be
+          removed from your timer. Good Luck!</p1
+        >
+        <br />
         <button id="start-button">Start</button>
-    </div>
-    <div id="question-section" style="display:none;">
+      </div>
+      <div id="question-section" class="card" style="display: none">
         <h1 id="question"></h1>
-        <div >
-            <ul id="answers">
-            <li><button class="ansButton" id="ans1"></button></li>
-            <li><button class="ansButton" id="ans2"></button></li>
-            <li><button class="ansButton" id="ans3"></button></li>
-            <li><button class="ansButton" id="ans4"></button></li>
-            </ul>
+        <div id="answers">
+          <ul>
+            <li>
+              <button class="ansButton" id="ans1" data-answer="a"></button>
+            </li>
+            <li>
+              <button class="ansButton" id="ans2" data-answer="b"></button>
+            </li>
+            <li>
+              <button class="ansButton" id="ans3" data-answer="c"></button>
+            </li>
+            <li>
+              <button class="ansButton" id="ans4" data-answer="d"></button>
+            </li>
+          </ul>
         </div>
 
-    </div>
-</main>
+        <div id="result" style="display: none">
+          <hr />
+          <h2 id="userResult"></h2>
+        </div>
+      </div>
 
-<script src="assets/js/script.js"></script>
-</body>
+      <div id="score" style="display: none">
+        <h2>Final Score</h2>
+        <h3 id="displayScore"></h3>
+        <form method="POST">
+        <label for="initials">Add Initials: </label>
+        <input type="text"  name="initials" id="initials" />
+        <button id="score-submit">Submit</button>
+        </form>
+      </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
