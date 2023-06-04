@@ -211,7 +211,7 @@ function evaluateAnswer(element) {
     setTimeout(() => {
       hideQuestions();
       displayScore();
-    }, 3000);
+    }, 2000);
   }
 }
 
@@ -244,7 +244,7 @@ function startTimer() {
       setTimeout(() => {
         hideAll();
         displayScore();
-      }, 3000);
+      }, 2000);
     }
   }, 1000);
 }

@@ -1,4 +1,4 @@
-##Javascript Coding quiz
+## Javascript Coding quiz
 
 ## Description
 
@@ -8,6 +8,10 @@ What did you learn?
 
 This was a challenging project which to time to organize and code. As there were many part to this project, it took a while to organize the code. I did use a lot of the syntax we leant in the class, but I still feel my code isn't written the most efficient way. I think this project has helped us to learn how to break a bigger coding project into smaller components.
 
+## External resources used
+
+1. [How to sort array descending](https://stackoverflow.com/questions/54623130/javascript-sort-an-array-of-objects-by-a-numeric-property-in-each-object)
+2. [How to use setTimeout() function](https://www.tutorialspoint.com/How-to-delay-a-JavaScript-function-call-using-JavaScript)
 
 ## Screenshots
 
