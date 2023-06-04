@@ -51,35 +51,62 @@ var questionBank = [
     choices: ["clearInterval", "clearTimer", "intervalOver", "setInterval"],
     answer: "a",
   },
-  { question: "How do we write a comment in javascript?", 
-  choices: ["/* */", "//", "#", "$$"], 
-  answer: "b" },
-  { question: "Which of the following methods can be used to display data in some form using Javascript?5", 
-  choices: ["document.write()", "console.log()", "window.alert()", "All of the above"], 
-  answer: "d" },
+  {
+    question: "How do we write a comment in javascript?",
+    choices: ["/* */", "//", "#", "$$"],
+    answer: "b",
+  },
+  {
+    question:
+      "Which of the following methods can be used to display data in some form using Javascript?",
+    choices: [
+      "document.write()",
+      "console.log()",
+      "window.alert()",
+      "All of the above",
+    ],
+    answer: "d",
+  },
 ];
 
 //get the high scores stored in local storage
 storeScores();
 
-//event listeners
+//event listener for the High Scores link
 highScoresLinkEl.addEventListener("click", renderScores);
+
+//event listener for starting the quiz
 startButtonEl.addEventListener("click", startQuiz);
+
+//event listener and function for restarting the quiz
 restartButtonEl.addEventListener("click", function () {
   location.reload();
 });
+
+//Submit button event listener and function to submit scores
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
-
+  var noInitials = true;
+  while (noInitials){
+  if (initials.value === null || initials.value === "") {
+    alert("Please enter your initials.");
+    return;
+  }
+  else {
+    noInitials=false;
+  }
+}
   var scores = {
     initials: initials.value.trim(),
     finalScore: score,
   };
   highScores.push(scores);
+  //sorting the array with descending scores
   highScores.sort(function (a, b) {
     return b.finalScore - a.finalScore;
   });
 
+  //taking out the lowest score
   if (highScores.length > 10) {
     highScores.pop();
   }
@@ -92,10 +119,9 @@ submitButton.addEventListener("click", function (event) {
   renderScores();
 });
 
+//function which starts the quiz
 function startQuiz() {
   startSectionEl.style.display = "none";
-  //   var button = document.createElement("button");
-  //   button.textContent = "Restart";
   questionSectionEl.style.display = "flex";
   restartEl.style.display = "flex";
   timerCount = 30;
@@ -108,6 +134,7 @@ function startQuiz() {
   });
 }
 
+//function which gets the scores from localStorage
 function storeScores() {
   var storedScores = JSON.parse(localStorage.getItem("scores"));
 
@@ -116,6 +143,7 @@ function storeScores() {
   }
 }
 
+//function to hide all sections
 function hideAll() {
   headerEl.style.display = "none";
   startSectionEl.style.display = "none";
@@ -124,6 +152,7 @@ function hideAll() {
   questionSectionEl.style.display = "none";
 }
 
+//function which renders the HighScores
 function renderScores() {
   hideAll();
   restartEl.style.display = "flex";
@@ -138,6 +167,7 @@ function renderScores() {
   }
 }
 
+//function which renders the questions
 function renderQuestion() {
   if (qIndex < questionBank.length) {
     questionEl.textContent = questionBank[qIndex].question;
@@ -149,7 +179,7 @@ function renderQuestion() {
     answerButton4EL.textContent = questionBank[qIndex].choices[3];
   }
 }
-
+//function which evaluates the answer
 function evaluateAnswer(element) {
   userAnswer = " ";
   if (element.matches(".ansButton") && qIndex < questionBank.length) {
@@ -173,7 +203,6 @@ function evaluateAnswer(element) {
     qIndex++;
   }
 
-
   if (qIndex < questionBank.length) {
     console.log("qIndex3: " + qIndex);
     renderQuestion();
@@ -186,14 +215,17 @@ function evaluateAnswer(element) {
   }
 }
 
+//function which hides the question section
 function hideQuestions() {
   questionSectionEl.style.display = "none";
 }
+//function which displays the final score
 function displayScore() {
   scoreSectionEl.style.display = "flex";
   scoreEl.textContent = score;
 }
 
+//function which starts the timer
 function startTimer() {
   // Sets timer
   timer = setInterval(function () {
@@ -210,7 +242,6 @@ function startTimer() {
       gameFinish = true;
       clearInterval(timer);
       setTimeout(() => {
-        
         hideAll();
         displayScore();
       }, 3000);
