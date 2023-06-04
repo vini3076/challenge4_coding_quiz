@@ -8,8 +8,8 @@
     <title>Javascript Coding quiz</title>
   </head>
   <body>
-    <header>
-      <a href="./highscores.html">View High Scores</a>
+    <header class="header">
+      <h3 id = "high-scores-link">View High Scores</h3>
       <h3 class="timer float-right">Time: <span class="timer-count"></span></h3>
     </header>
     <main>
@@ -17,7 +17,7 @@
         <h1>Javascript Coding Quiz</h1>
         <p1>
           Try you luck on this Javascript Coding quiz. You have 1 minute to
-          answer 5 questions. For each question you get wrong 10 secs will be
+          answer 5 questions. For each question you get wrong 5 secs will be
           removed from your timer. Good Luck!</p1
         >
         <br />
@@ -47,15 +47,29 @@
           <h2 id="userResult"></h2>
         </div>
       </div>
+      
+     
 
       <div id="score" style="display: none">
-        <h2>Final Score</h2>
-        <h3 id="displayScore"></h3>
+        <h3>Final Score: <span id="displayScore"></span> </h3>
+        
         <form method="POST">
         <label for="initials">Add Initials: </label>
         <input type="text"  name="initials" id="initials" />
         <button id="score-submit">Submit</button>
         </form>
+      </div>
+
+      <div id="high-scores" style="display: none">
+        <h1> High Scores </h1>
+        <ol id = "score-list">
+
+        </ol>
+    
+    </div>
+
+    <div id = "restart" style="display: none">
+        <button class="restartButton">Restart</button>
       </div>
     </main>
 
