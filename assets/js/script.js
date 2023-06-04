@@ -242,7 +242,7 @@ function startTimer() {
       gameFinish = true;
       clearInterval(timer);
       setTimeout(() => {
-        hideAll();
+        hideQuestions();
         displayScore();
       }, 2000);
     }

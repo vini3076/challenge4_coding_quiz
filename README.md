@@ -15,13 +15,16 @@ This was a challenging project which to time to organize and code. As there were
 
 ## Screenshots
 
+![Starting section](./assets/images/StartingPage.png) 
+![Questions section](./assets/images/Questions.png) 
+![Final score page](./assets/images/Finalscorepage.png)
+![High scores page](./assets/images/HighScoresPage.png)
 
-    ![Starting Page](./assets/)
 
 ## Links
 
 [Github repository](https://github.com/vini3076/challenge4_coding_quiz)
 
-[Deployed page](https://github.com/vini3076/challenge4_coding_quiz)
+[Deployed page](https://vini3076.github.io/challenge4_coding_quiz)
 
 
